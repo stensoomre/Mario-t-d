@@ -9,7 +9,7 @@ from math import *
 # 02.02.22
 kyts = int(input("Siseta kulutatud kütus (Liitrides): "))
 maa = int(input("Siseta selle kütusega sõidetud maa (km): "))
-kulund1 = (maa/kyts)/100
+kulund1 = (kyts/maa)/100
 print("Kulutate 100 km kohta",kulund1,"L kütust")
 
 # Arvusüsteemid
