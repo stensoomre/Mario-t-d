@@ -20,8 +20,11 @@ def main():
     
             Tere tulemast
              Blackjacki!""")
-    print("    ") 
-    print("            " ,difficulty , "tase")
+    print("    ")
+    if developer == 1:
+        print("        Arendaja Mood on sees!")
+    else:
+        print("            " ,difficulty , "tase")
     print("    ") 
     print("    ###############################")
     print("            Sul on ",raha,"€")
@@ -30,11 +33,12 @@ def main():
     print("""    ###############################
 
     Alustamiseks kirjuta:      PLAY
+    Rahakulutamiseks kirjuta   SHOP
     Sättete vahetamiseks:  SETTINGS
     Kes selle koodi tegid:  CREDITS
     
     ###############################
-    Versioon: 1.16
+    Versioon: 1.18
     """)
     global arv
     global arv2
@@ -46,6 +50,7 @@ def main():
     global stand
     global stand1
     global panus
+    global ass
     arv = 0
     arv2 = 0
     tyhiarv = 2
@@ -56,7 +61,9 @@ def main():
     stand = 0
     stand1 = 0
     panus = 0
+    ass = 0
     soov = input().upper()
+    
 
     if soov == "PLAY":
         print("Palju panustad €? Sul on ",raha,"€ : ")
@@ -81,6 +88,8 @@ def main():
         settings()
     if soov == "CREDITS":
         credits()
+    if soov == "SHOP":
+        shop()
     if soov == "PALUN":
         if raha == 0:
             print("Palun need on mu ülejäänud taara tšekkid.")
@@ -98,6 +107,82 @@ def main():
         print("Kas ikka kirjutasid õieti?")
         sleep(2)
         main()
+        
+def shop():
+    global raha
+    global ost1
+    
+    screen_clear()
+    print("""
+    ##############################
+                 POOD
+    ##############################""")
+    print("    Sul on ",raha," €")
+    print("")
+    if developer == 1:
+        print("    [RÕÕV] Rõõvi poodi - + 10,000,000 €")
+    else:
+        print("")
+    if ost1 == "tehtud":
+        print("    [1] Developer Mode - Ostetud")
+    else:
+        print("    [1] Developer Mode - 2,000,000 €") 
+    print("")
+    print("    (BACK) Tagasi?")
+    soov2 = input().upper()
+    if soov2 == "BACK":
+        main()
+    if soov2 == "1":
+        if raha >= 2000000:
+            if ost1 == "tehtud":
+                print("    Te juba omate seda toodet!!!")
+                sleep(2)
+                pood()
+            else:
+                print("    Kas oled kindel, et soovid seda osta?")
+                soov3 = input().upper()
+                if soov3 == "JAH" or "JA":
+                    print("")
+                    print("")
+                    print("         Developer Mode lahti tehtud")
+                    print("                 -2,000,000 €")
+                    raha = raha - 2000000
+                    ost1 = "tehtud"
+                    sleep(5)
+                    seletus()
+        if raha < 2000000:
+            print("")
+            print("Sul pole piisavalt raha")
+            sleep(1)
+            shop()
+        if soov2 == "RÕÕV":
+            if developer == 1:
+                lmao = randint(1,10)
+                if lmao == 5:
+                    print("")
+                    print("    Said rõõviga edukalt hakkama!")
+                    print("           +10,000,000 €")
+                    raha = raha + 10000000
+                    sleep(2)
+                    shop()
+                else:
+                    print("")
+                    print("")
+                    print("    Rõõvi alustades sittusid ennast täis ja läksid koju nutma")
+                    sleep(2)
+                    shop()
+            else:
+                shop()
+    else:
+        shop()
+        
+def seletus():
+    print("")
+    print("    Et minna developer modei lihtsalt sisesta \"pede\" algse difficulty sisse")
+    print("            See kasutaja kus hetkel sees oled on nüüd Developer!")
+    developer = 1
+    sleep(15)
+    main()
     
 def settings():
     screen_clear()
@@ -106,14 +191,14 @@ def settings():
             Sätted mängul
     ##############################
     """)
-    print("Siin pole veel midagi ):") 
+    print("    Siin pole veel midagi ):") 
     print("")
-    print("(BACK) Tagasi?")
+    print("    (BACK) Tagasi?")
     soov2 = input().upper()
     if soov2 == "BACK":
         main()
     else:
-        main()
+        settings()
         
 def credits():
     screen_clear()
@@ -151,7 +236,7 @@ def info():
      oleks vähemalt 21, üle ei tohi minna.
      
      
-     Need kaartid siin on väärtusega 10 alati:
+    Need kaartid siin on väärtusega 10 alati:
      
              ┌───────┐         ┌───────┐         ┌───────┐                                            
              │ J     │         │ Q     │         │ K     │                               
@@ -161,8 +246,9 @@ def info():
              └───────┘         └───────┘         └───────┘
               (Poiss)           (Emand)           (Kunn)
              
-     Aga see kaart on väärtusega 1 ja 11. Ta on 1 siis, kui sul läks
-     kogemata üle 21 aga ta on 11 siis kui veel ole läinud!!!
+             
+             
+                     Aga see kaart on väärtusega 11.
      
                                ┌───────┐
                                │ A     │
@@ -185,6 +271,7 @@ def info():
 
 def kaart(erikaart):
     global arv
+    global ass
  
     if erikaart == 1:  
         arv = arv + 1
@@ -202,14 +289,14 @@ def kaart(erikaart):
                 "│ 2     │",
                 "│       │",
                 "│       │",
-                "│     2 │", # katiki
+                "│     2 │", 
                 "└───────┘",]
         
         
     elif erikaart == 3:
         arv = arv + 3
         return ["┌───────┐",
-                "│ 3     │", # katki
+                "│ 3     │", 
                 "│       │",
                 "│       │",
                 "│     3 │",
@@ -221,7 +308,7 @@ def kaart(erikaart):
         return ["┌───────┐",
                 "│ 4     │",
                 "│       │",
-                "│       │", # katki
+                "│       │",
                 "│     4 │",
                 "└───────┘",]
         
@@ -317,7 +404,8 @@ def kaart(erikaart):
         
         
     else:
-        arv = arv + 11 #Hetkel ainult
+        arv = arv + 11
+       # ass = 1 #Hetkel ainult
         return ["┌───────┐",
                 "│ A     │",
                 "│       │",
@@ -394,6 +482,8 @@ def play():
     global stand
     global stand1
     global raha
+    global ass
+
     
     stand1 = 0
 
@@ -644,27 +734,40 @@ def play():
         if arv2 != 0:
             if arv/2 == arv2:
                 arv = arv2
-        
+                
+#     if ass == 1: # Midagi leiutasin siin kokku küll :/
+#         if arv2 <=10:
+#             arv2 = arv2 + 11
+#         else:
+#             ass = 2
+#             
+#     if ass == 2
+#         arv = arv2 - 11
+#         ass = 3
+#         
+#     if ass == 3:
+#         arv2 = arv2 + 1
     
-        
-    print("    ")
+    print("     ┌──────────────────────────────────────────────────┐")  
+    print("     │Panustatud raha: ", panus)
+    print("     └──────────────────────────────────────────────────┘")
     if arv2 != 0:
         if arv/2 == arv2:
             arv = arv2
     print("    ")     
     print("      Sina, sul on: ", arv ,"/21")
-    print("  ##############################")
-    print("    ") 
-    print("    Mida soovid teha?         ")
-    print("    ")
-    print("    ") 
-    print("    Veel üks kaart?    - HIT  ")
-    print("    ") 
-    print("    Oled rahul mis on? - STAND")
-    print("    ") 
-    print("    Mida teha?         - INFO ")
-    print("    ") 
-    print("  ##############################")
+    print(" │##############################")
+    print(" │  ") 
+    print(" │  Mida soovid teha?         ")
+    print(" │  ")
+    print(" │  ") 
+    print(" │  Veel üks kaart?    - HIT  ")
+    print(" │  ") 
+    print(" │  Oled rahul mis on? - STAND")
+    print(" │  ") 
+    print(" │  Mida teha?         - INFO ")
+    print(" │  ") 
+    print(" │##############################")
     soov10 = input("    ").upper()
     if soov10 == "INFO":
         info()
@@ -714,15 +817,25 @@ while True:
     ###################################################
 
          """)
+    global ost1
+    ost1 = 0
     difficulty = input().capitalize()
     
-    global raha
+    
     if difficulty == "Kerge":
+        developer = 0
         raha = 2500
         main()
     elif difficulty == "Keskmine":
+        developer = 0
         raha = 1000
         main()  
     elif difficulty == "Raske":
+        developer = 0
         raha = 250
+        main()
+    elif difficulty == "Pede":
+        developer = 1
+        raha = 100000000000
+        difficulty = "Raske"
         main()
