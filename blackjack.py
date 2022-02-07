@@ -38,7 +38,7 @@ def main():
     Kes selle koodi tegid:  CREDITS
     
     ###############################
-    Versioon: 1.18
+    Versioon: 1.19
     """)
     global arv
     global arv2
@@ -120,7 +120,7 @@ def shop():
     print("    Sul on ",raha," €")
     print("")
     if developer == 1:
-        print("    [RÕÕV] Rõõvi poodi - + 10,000,000 €")
+        print("    [RÖÖV] Röövi poodi - + 10,000,000 €")
     else:
         print("")
     if ost1 == "tehtud":
@@ -155,12 +155,12 @@ def shop():
             print("Sul pole piisavalt raha")
             sleep(1)
             shop()
-        if soov2 == "RÕÕV":
+        if soov2 == "RÖÖV":
             if developer == 1:
                 lmao = randint(1,10)
                 if lmao == 5:
                     print("")
-                    print("    Said rõõviga edukalt hakkama!")
+                    print("    Said rööviga edukalt hakkama!")
                     print("           +10,000,000 €")
                     raha = raha + 10000000
                     sleep(2)
@@ -168,7 +168,7 @@ def shop():
                 else:
                     print("")
                     print("")
-                    print("    Rõõvi alustades sittusid ennast täis ja läksid koju nutma")
+                    print("    Röövi alustades sittusid ennast täis ja läksid koju nutma")
                     sleep(2)
                     shop()
             else:
