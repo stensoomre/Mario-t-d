@@ -155,24 +155,24 @@ def shop():
             print("Sul pole piisavalt raha")
             sleep(1)
             shop()
-        if soov2 == "RÖÖV":
-            if developer == 1:
-                lmao = randint(1,10)
-                if lmao == 5:
-                    print("")
-                    print("    Said rööviga edukalt hakkama!")
-                    print("           +10,000,000 €")
-                    raha = raha + 10000000
-                    sleep(2)
-                    shop()
-                else:
-                    print("")
-                    print("")
-                    print("    Röövi alustades sittusid ennast täis ja läksid koju nutma")
-                    sleep(2)
-                    shop()
-            else:
+    if soov2 == "RÖÖV":
+        if developer == 1:
+            lmao = randint(1,10)
+            if lmao == 5:
+                print("")
+                print("    Said rööviga edukalt hakkama!")
+                print("           +10,000,000 €")
+                raha = raha + 10000000
+                sleep(2)
                 shop()
+            else:
+                print("")
+                print("")
+                print("    Röövi alustades sittusid ennast täis ja läksid koju nutma")
+                sleep(2)
+                shop()
+        else:
+            shop()
     else:
         shop()
         
