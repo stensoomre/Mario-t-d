@@ -54,7 +54,7 @@ if valik == 3:
 
 if valik == 4:
     r = int(input("Sisestage silindri pohjapindala Sp = "))
-    h = int(input("Sisestage koonuse kõrgus H = "))
+    h = int(input("Sisestage silindri kõrgus H = "))
     print(silinder(r,h))
 
 
