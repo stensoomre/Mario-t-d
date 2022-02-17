@@ -1,5 +1,5 @@
 # Sten Soomre
-# Harjutus 5
+# Harjutus 7
 # 15.02.22
 
 import math
