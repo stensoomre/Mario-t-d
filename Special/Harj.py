@@ -2,7 +2,7 @@
 # Harj. 15
 # Sest ma mängisin tunnis :(
 import re
-kraadid = open('kraadid.txt')
+kraadid = open('kraadid.txt', encoding="UTF-8")
 
 print("{0:<13}{1:<9}{2:<12}".format("Kuu", "Päev", "Kui soe oli",))
 print("---------------------------------")
@@ -31,3 +31,4 @@ for line in kraadid:
     soe = str(soe) + "°C"
     print("{0:<13}{1:<9}{2:<12}".format(kuu, mitmes3, soe,))
     mitmes2 += 1
+
