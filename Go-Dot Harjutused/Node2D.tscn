@@ -1,8 +1,50 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Harjutus 5.gd" type="Script" id=1]
+[ext_resource path="res://Harjutus 6.gd" type="Script" id=1]
+[ext_resource path="res://laptop.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://8bitOperatorPlus8-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = SubResource( 1 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Harjutused" type="Node" parent="."]
+
+[node name="Node" type="Node" parent="."]
 script = ExtResource( 1 )
+
+[node name="Laptop" type="Sprite" parent="Node"]
+position = Vector2( 514, 322 )
+scale = Vector2( 1.28488, 1.20633 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/Laptop"]
+margin_left = -255.276
+margin_top = -195.656
+margin_right = 204.724
+margin_bottom = 104.344
+rect_scale = Vector2( 1.11039, 1.11837 )
+custom_colors/default_color = Color( 0.301961, 0.588235, 0.188235, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Häkkime kodunetti!
+
+ipaddress = 127.0.0.1
+
+DEBUG!!!
+Halb mõte!
+DEBUG!!!
+
+
+Kas soovite jätkata?
+> Jah
+
+Jätkamine...
+
+Ühendus kaotatud...
+
+#END"

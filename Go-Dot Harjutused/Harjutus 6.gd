@@ -25,15 +25,15 @@ func _process(delta):
 		protsent = random(0,100)
 		dmg = random(8,12)
 		if kuul == 0:
-			print("Relv on tühi | ",kuul,"/",kuulmax)
+			print("Relv on tühi | ",kuul,"/",kuulmax) # 
 		else:
 			kuul -= 1
 			if protsent >= 80:
-				print("Möödas | ",kuul,"/",kuulmax)
+				print("Möödas | ",kuul,"/",kuulmax) # 
 				mooda += 1
 			else:
 				vastasehp -= dmg
-				print("Pihtas: -",dmg," elu | ",kuul,"/",kuulmax," | Elusi järgi: ", vastasehp)
+				print("Pihtas: -",dmg," elu | ",kuul,"/",kuulmax," | Elusi järgi: ", vastasehp) #
 				pihtas += 1
 				if vastasehp <= 0:
 					var lasku = pihtas+mooda
@@ -52,7 +52,7 @@ func _process(delta):
 					-------------------MÄNG LÄBI--------------------
 					------------------------------------------------
 					""")
-					print("\nEffektiivsus = %0.2f%%" % tulemus)
+					print("\nEffektiivsus %0.2f%%" % tulemus)
 					print("Said ", punkt, " punkti")
 					print("Lasid kokku: ", lasku)
 					
