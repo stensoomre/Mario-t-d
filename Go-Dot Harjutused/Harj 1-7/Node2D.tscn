@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Harjutus 7.gd" type="Script" id=1]
+[ext_resource path="res://bg.png" type="Texture" id=2]
+[ext_resource path="res://Harjutus 6.gd" type="Script" id=3]
+[ext_resource path="res://8bitOperatorPlus8-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0.603922, 0.0392157, 0.0392157, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFontData" id=4]
+antialiased = false
+font_path = "res://8bitOperatorPlus8-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 70
+outline_color = Color( 1, 0, 0, 1 )
+font_data = SubResource( 4 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 530, 316 )
+scale = Vector2( 1.24183, 1.27737 )
+texture = ExtResource( 2 )
+
+[node name="Elud" type="RichTextLabel" parent="Bg"]
+margin_left = 218.226
+margin_top = -230.161
+margin_right = 974.226
+margin_bottom = -155.161
+custom_colors/default_color = Color( 1, 0.0588235, 0.0588235, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Placeholder"
+
+[node name="Kuul" type="RichTextLabel" parent="Bg"]
+anchor_left = -0.035
+anchor_top = 0.025
+anchor_right = -0.035
+anchor_bottom = 0.025
+margin_left = -374.87
+margin_top = 178.525
+margin_right = -69.87
+margin_bottom = 248.525
+rect_pivot_offset = Vector2( -464.295, -385.367 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Placeholder"
+
+[node name="Damage" type="RichTextLabel" parent="Bg"]
+anchor_left = -0.035
+anchor_top = 0.025
+anchor_right = -0.035
+anchor_bottom = 0.025
+margin_left = 245.525
+margin_top = 171.28
+margin_right = 550.525
+margin_bottom = 241.28
+rect_pivot_offset = Vector2( 4.83136, 7.04535 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Placeholder"
+
+[node name="END" type="RichTextLabel" parent="Bg"]
+margin_left = -242.384
+margin_top = -75.9373
+margin_right = 307.616
+margin_bottom = 38.0627
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 5 )
+
+[node name="STATS" type="RichTextLabel" parent="Bg"]
+anchor_left = -0.035
+anchor_top = 0.025
+anchor_right = -0.035
+anchor_bottom = 0.025
+margin_left = -154.87
+margin_top = -26.475
+margin_right = 150.13
+margin_bottom = 142.525
+rect_pivot_offset = Vector2( 4.83136, 7.04535 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+
+[node name="Harjutused" type="Node" parent="."]
+script = ExtResource( 3 )
