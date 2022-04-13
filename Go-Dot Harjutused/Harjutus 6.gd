@@ -12,11 +12,12 @@ func random(a,b): # funktioon oleks lihtsam
 var vastasehp = 100
 var dmg = 0
 var protsent = 0
-var kuul = 6
 var pihtas = 0
 var mooda = 0
 var tulemus = 0
 var kuulmax = 30
+var kuul = kuulmax
+var kas
 func _ready():
 	pass
 
@@ -25,16 +26,19 @@ func _process(delta):
 		protsent = random(0,100)
 		dmg = random(8,12)
 		if kuul == 0:
-			print("Relv on tühi | ",kuul,"/",kuulmax) # 
+			print("Relv on tühi | ",kuul,"/",kuulmax) #
+			kas = 2
 		else:
 			kuul -= 1
 			if protsent >= 80:
 				print("Möödas | ",kuul,"/",kuulmax) # 
+				kas = 1
 				mooda += 1
 			else:
 				vastasehp -= dmg
 				print("Pihtas: -",dmg," elu | ",kuul,"/",kuulmax," | Elusi järgi: ", vastasehp) #
 				pihtas += 1
+				kas = 0
 				if vastasehp <= 0:
 					var lasku = pihtas+mooda
 					tulemus = 100-((float(mooda)/float(lasku))*100)
@@ -64,6 +68,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("reload"):
 		if kuul == kuulmax:
 			print("Su relv on juba laetud")
+			kas = 3
 		else:
 			kuul += 1
 			print("Laadisid relva | ",kuul,"/",kuulmax)
