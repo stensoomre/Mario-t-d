@@ -1,12 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Harj 8.gd" type="Script" id=1]
-[ext_resource path="res://2578748.jpg" type="Texture" id=2]
+[ext_resource path="res://BG.png" type="Texture" id=2]
 [ext_resource path="res://Kast.png" type="Texture" id=3]
 [ext_resource path="res://8bitOperatorPlus8-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://DuckFullBody.png" type="Texture" id=5]
+[ext_resource path="res://st_Thumbnail_0.jpg" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
 font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
@@ -15,29 +24,83 @@ script = ExtResource( 1 )
 [node name="Node" type="Node" parent="."]
 
 [node name="Bg" type="Sprite" parent="."]
-position = Vector2( 511, 277 )
+position = Vector2( 518, 236 )
 texture = ExtResource( 2 )
 
-[node name="nupp" type="Button" parent="Bg"]
-margin_left = -105.0
-margin_top = -27.0
-margin_right = 62.0
-margin_bottom = 29.0
+[node name="kivi" type="Button" parent="Bg"]
+margin_left = -381.0
+margin_top = 255.0
+margin_right = -266.0
+margin_bottom = 311.0
+rect_pivot_offset = Vector2( -578, -206 )
+custom_fonts/font = SubResource( 1 )
 action_mode = 0
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Kast" type="Sprite" parent="Bg"]
-position = Vector2( -20, 90 )
+[node name="paber" type="Button" parent="Bg"]
+margin_left = -504.0
+margin_top = 255.0
+margin_right = -391.0
+margin_bottom = 313.0
+rect_pivot_offset = Vector2( -578, -206 )
+custom_fonts/font = SubResource( 1 )
+action_mode = 0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="kaarid" type="Button" parent="Bg"]
+margin_left = -257.0
+margin_top = 254.0
+margin_right = -147.0
+margin_bottom = 310.0
+rect_pivot_offset = Vector2( -578, -206 )
+custom_fonts/font = SubResource( 1 )
+action_mode = 0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Kast" type="Sprite" parent="."]
+position = Vector2( 157, 67 )
 texture = ExtResource( 3 )
 
-[node name="Tekst" type="RichTextLabel" parent="Bg/Kast"]
-margin_left = -118.0
-margin_top = -17.0
-margin_right = 120.0
-margin_bottom = 11.0
+[node name="Punkte" type="RichTextLabel" parent="Kast"]
+margin_left = -71.0
+margin_top = -12.0
+margin_right = 115.0
+margin_bottom = 26.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 
-[connection signal="pressed" from="Bg/nupp" to="." method="_on_nupp_pressed"]
+[node name="Vastane" type="Sprite" parent="."]
+position = Vector2( 793, 454 )
+scale = Vector2( 1.6147, 1.26344 )
+texture = ExtResource( 3 )
+
+[node name="Tegi" type="RichTextLabel" parent="Vastane"]
+margin_left = -113.0
+margin_top = -25.0
+margin_right = 114.0
+margin_bottom = 24.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+
+[node name="DuckFullBody" type="Sprite" parent="Vastane"]
+position = Vector2( -379.019, -109.226 )
+scale = Vector2( 0.432684, 0.549201 )
+texture = ExtResource( 5 )
+
+[node name="StThumbnail0" type="Sprite" parent="Vastane/DuckFullBody"]
+position = Vector2( 921.775, -34.588 )
+scale = Vector2( 0.533994, 0.564052 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="Bg/kivi" to="." method="_on_kivi_pressed"]
+[connection signal="pressed" from="Bg/paber" to="." method="_on_paber_pressed"]
+[connection signal="pressed" from="Bg/kaarid" to="." method="_on_kaarid_pressed"]
