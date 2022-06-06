@@ -10,7 +10,7 @@ uncommon = 3 # 33,3%
 common = 1
 debug = 0
 global money
-money = 0.01
+money = 110.01
 
 def main():
     global money
@@ -28,8 +28,9 @@ def main():
     print("Money:",money,"$")
     e = input("")
     if e == "1":
+        arv2 = input("How many packs you want to open? (number or 'all')  ")
         try:
-            arv = int(input("How many packs you want to open?  "))
+            arv = int(arv2)
             text = int(input("""
         Type the corresponding number for a option.
         [1] - Open packs with text based only
@@ -38,9 +39,19 @@ def main():
             """))
             open(arv, text)
         except:
-            print("Vale number!!!")
-            sleep(2)
-            main()
+            if arv2 == "all":
+                arv = int(money //1)
+                text = int(input("""
+        Type the corresponding number for a option.
+        [1] - Open packs with text based only
+        [2] - Open packs with a picture
+        [0] - Open packs quick
+            """))
+                open(arv, text)
+            else:
+                print("Vale number!!!")
+                sleep(2)
+                main()
     elif e == "2":
         math()
     elif e == "3":
