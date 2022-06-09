@@ -1,0 +1,331 @@
+from random import *
+from time import *
+
+# Wallstreet simulator
+# Now with Stocks!!!
+
+def main():
+    print("""
+        #############################
+        
+            WALL STREET SIMULATOR
+            
+        #############################
+            
+            TYPE 1 to play
+
+""")
+    soov = input()
+    if soov == "1":
+        global money
+        global stock1
+        global stock2
+        global stock3
+        global stock4
+        global BBB
+        global RBLX
+        global DILDO
+        global KKK
+        BBB = randint(1,100)
+        RBLX = randint(100,10000)
+        DILDO = randint(1,10)
+        KKK = randint(100000,10000000)
+        stock1 = 0
+        stock2 = 0
+        stock3 = 0 
+        stock4 = 0 
+        money = 100
+        global day
+        day = 1
+        play()
+    else:
+        print("Fuck off")
+        sleep(2)
+        main()
+        
+        
+def play():
+    global money
+    global stock1
+    global stock2
+    global stock3
+    global stock4
+    global BBB
+    global RBLX
+    global DILDO
+    global KKK
+    global day
+    print("Lmao")
+    print("""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+""")
+    print("#########################")
+    print("Day",day)
+    print(" Stocks:")
+    print("")
+    print(BBB, "$ - BBB (Big Booty Bitches) väärtus")
+    print("You own BBB", float(stock1/10000),"%")
+    print("")
+    print(RBLX, "$ - RBLX (Roblox) väärtus")
+    print("You own RBLX", float(stock2/10000),"%")
+    print("")
+    print(DILDO, "$ - DILDO (Dildo) väärtus")
+    print("You own DILDO", float(stock3/10000),"%")
+    print("")
+    print(KKK, "$ - KKK (Ku Klux Klan) väärtus")
+    print("You own KKK", float(stock4/10000),"%")
+    print("")
+    print("Money:",money,"$")
+    soov1 = input("""
+Type the corressponding number todo a action:
+
+[1] Buy stock?
+[2] Sell stock?
+[3] Next day?
+
+""")
+    if soov1 == "1":
+        print("Mida sa soovid osta?")
+        try:
+            soov2 = str(input()).upper()
+            if soov2 == "BBB":
+                print("Palju sa soovid seda osta?")
+                print("Hetke hind:", BBB,"$ = 0.0001%")
+                print("")
+                print("Sisestage nagu '0.0001'")
+                print("Sinu raha:",money,"$")
+                print("")
+                soov3 = float(input("Sisestada arv: "))
+                kogus = soov3*10000
+                if soov3+stock1 > 100:
+                    print("Sa ei saa omada rohkem, kui 100% firmast!!!")
+                    sleep(2)
+                    play()
+                raha = kogus*BBB
+                if money >= raha:
+                    print("Edukas ost!")
+                    stock1 += kogus
+                    money -= raha
+                    print("Omad nüüd:", float(stock1/10000), "%")
+                    sleep(2)
+                    play()
+                else:
+                    print("Sul pole piisavalt raha!")
+                    sleep(2)
+                    play()
+            if soov2 == "RBLX":
+                print("Palju sa soovid seda osta?")
+                print("Hetke hind:", RBLX,"$ = 0.0001%")
+                print("")
+                print("Sisestage nagu '0.0001'")
+                print("Sinu raha:",money,"$")
+                print("")
+                soov3 = float(input("Sisestada arv: "))
+                kogus = soov3*10000
+                if soov3+stock2 > 100:
+                    print("Sa ei saa omada rohkem, kui 100% firmast!!!")
+                    sleep(2)
+                    play()
+                raha = kogus*RBLX
+                if money >= raha:
+                    print("Edukas ost!")
+                    stock2 += kogus
+                    money -= raha
+                    print("Omad nüüd:", float(stock2/10000), "%")
+                    sleep(2)
+                    play()
+                else:
+                    print("Sul pole piisavalt raha!")
+                    sleep(2)
+                    play()
+            if soov2 == "DILDO":
+                print("Palju sa soovid seda osta?")
+                print("Hetke hind:", DILDO,"$ = 0.0001%")
+                print("")
+                print("Sisestage nagu '0.0001'")
+                print("Sinu raha:",money,"$")
+                print("")
+                soov3 = float(input("Sisestada arv: "))
+                kogus = soov3*10000
+                if soov3+stock3 > 100:
+                    print("Sa ei saa omada rohkem, kui 100% firmast!!!")
+                    sleep(2)
+                    play()
+                raha = kogus*DILDO
+                if money >= raha:
+                    print("Edukas ost!")
+                    stock3 += kogus
+                    money -= raha
+                    print("Omad nüüd:", float(stock3/10000), "%")
+                    sleep(2)
+                    play()
+                else:
+                    print("Sul pole piisavalt raha!")
+                    sleep(2)
+                    play()
+                    
+            if soov2 == "KKK":
+                print("Palju sa soovid seda osta?")
+                print("Hetke hind:", KKK,"$ = 0.0001%")
+                print("")
+                print("Sisestage nagu '0.0001'")
+                print("Sinu raha:",money,"$")
+                print("")
+                soov3 = float(input("Sisestada arv: "))
+                kogus = soov3*10000
+                if soov3+stock4 > 100:
+                    print("Sa ei saa omada rohkem, kui 100% firmast!!!")
+                    sleep(2)
+                    play()
+                raha = kogus*KKK
+                if money >= raha:
+                    print("Edukas ost!")
+                    stock4 += kogus
+                    money -= raha
+                    print("Omad nüüd:", float(stock4/10000), "%")
+                    sleep(2)
+                    play()
+                else:
+                    print("Sul pole piisavalt raha!")
+                    sleep(2)
+                    play()            
+        except:
+            print("vale vaste")
+            sleep(2)
+            play()
+    
+    if soov1 == "2":
+        print("Mida soovid müüa?")
+        try:
+            soov2 = str(input()).upper()
+            if soov2 == "BBB":
+                print("Palju sa soovid seda müüa?")
+                print("Hetke hind:", BBB,"$ = 0.0001%")
+                print("")
+                print("Sisestage nagu '0.0001'")
+                print("Omad hetkel:",stock1/10000,"%")
+                print("Sinu raha:",money,"$")
+                print("")
+                soov3 = float(input("Sisestada arv: "))
+                kogus = soov3*10000
+                raha = kogus*BBB
+                if kogus <= stock1:
+                    print("Edukas müük!!!")
+                    print("Müüsid",soov3,"% firmast")
+                    print("Said",raha,"$")
+                    money += raha
+                    stock1 -= kogus
+                    sleep(2)
+                    play()
+                else:
+                    print("Sa ei saa müüa firmat, mida sa ei oma.")
+                    sleep(1)
+                    print("homo")
+                    play()
+            if soov2 == "RBLX":
+                print("Palju sa soovid seda müüa?")
+                print("Hetke hind:", RBLX,"$ = 0.0001%")
+                print("")
+                print("Sisestage nagu '0.0001'")
+                print("Omad hetkel:",stock2/10000,"%")
+                print("Sinu raha:",money,"$")
+                print("")
+                soov3 = float(input("Sisestada arv: "))
+                kogus = soov3*10000
+                raha = kogus*RBLX
+                if kogus <= stock2:
+                    print("Edukas müük!!!")
+                    print("Müüsid",soov3,"% firmast")
+                    print("Said",raha,"$")
+                    money += raha
+                    stock2 -= kogus
+                    sleep(2)
+                    play()
+                else:
+                    print("Sa ei saa müüa firmat, mida sa ei oma.")
+                    sleep(1)
+                    print("homo")
+                    play()
+            if soov2 == "DILDO":
+                print("Palju sa soovid seda müüa?")
+                print("Hetke hind:", DILDO,"$ = 0.0001%")
+                print("")
+                print("Sisestage nagu '0.0001'")
+                print("Omad hetkel:",stock3/10000,"%")
+                print("Sinu raha:",money,"$")
+                print("")
+                soov3 = float(input("Sisestada arv: "))
+                kogus = soov3*10000
+                raha = kogus*DILDO
+                if kogus <= stock3:
+                    print("Edukas müük!!!")
+                    print("Müüsid",soov3,"% firmast")
+                    print("Said",raha,"$")
+                    money += raha
+                    stock3 -= kogus
+                    sleep(2)
+                    play()
+                else:
+                    print("Sa ei saa müüa firmat, mida sa ei oma.")
+                    sleep(1)
+                    print("homo")
+                    play()
+            if soov2 == "KKK":
+                print("Palju sa soovid seda müüa?")
+                print("Hetke hind:", KKK,"$ = 0.0001%")
+                print("")
+                print("Sisestage nagu '0.0001'")
+                print("Omad hetkel:",stock4/10000,"%")
+                print("Sinu raha:",money,"$")
+                print("")
+                soov3 = float(input("Sisestada arv: "))
+                kogus = soov3*10000
+                raha = kogus*KKK
+                if kogus <= stock4:
+                    print("Edukas müük!!!")
+                    print("Müüsid",soov3,"% firmast")
+                    print("Said",raha,"$")
+                    money += raha
+                    stock4 -= kogus
+                    sleep(2)
+                    play()
+                else:
+                    print("Sa ei saa müüa firmat, mida sa ei oma.")
+                    sleep(1)
+                    print("homo")
+                    play()
+        except:
+            print("Vigane vaste")
+            sleep(2)
+            play()
+    if soov1 == "3":
+        BBB = randint(1,100)
+        RBLX = randint(100,10000)
+        DILDO = randint(1,10)
+        KKK = randint(100000,10000000)
+        day += 1
+        play()
+    
+    
+main()
