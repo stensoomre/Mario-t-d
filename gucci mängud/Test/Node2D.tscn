@@ -33,12 +33,32 @@ texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 2 )
 
 [node name="Points per click" type="RichTextLabel" parent="TextureButton"]
-margin_left = -340.365
-margin_top = -272.05
-margin_right = 4.63464
-margin_bottom = -185.05
+margin_left = -340.0
+margin_top = -272.0
+margin_right = 40.0
+margin_bottom = -246.0
+rect_pivot_offset = Vector2( 226.545, 91.4466 )
 custom_fonts/normal_font = ExtResource( 5 )
 text = "Points per click: "
+
+[node name="Points per second" type="RichTextLabel" parent="TextureButton"]
+margin_left = -340.0
+margin_top = -243.0
+margin_right = 36.0
+margin_bottom = -217.0
+rect_pivot_offset = Vector2( 236.304, 25.8479 )
+custom_fonts/normal_font = ExtResource( 5 )
+text = "Points per second: "
+
+[node name="Reborn3" type="RichTextLabel" parent="TextureButton"]
+margin_left = -345.245
+margin_top = 373.306
+margin_right = 30.7546
+margin_bottom = 399.306
+rect_pivot_offset = Vector2( 236.304, 25.8479 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 5 )
+text = "Times reborn: "
 
 [node name="Button text" type="RichTextLabel" parent="TextureButton"]
 margin_left = 45.1381
@@ -54,10 +74,21 @@ text = "Press me for points"
 script = ExtResource( 4 )
 
 [node name="Shop_1" type="RichTextLabel" parent="TextureButton/Node"]
-margin_left = 403.0
-margin_top = 345.0
-margin_right = 507.0
-margin_bottom = 385.0
+margin_left = 821.0
+margin_top = 41.0
+margin_right = 989.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( -46, 46 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "Pay 100 points for 1 PPC"
+
+[node name="Shop_2" type="RichTextLabel" parent="TextureButton/Node"]
+margin_left = 821.0
+margin_top = 104.0
+margin_right = 989.0
+margin_bottom = 144.0
+rect_pivot_offset = Vector2( -46, 46 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 text = "Pay 100 points for 1 PPC"
@@ -72,9 +103,36 @@ custom_fonts/normal_font = ExtResource( 5 )
 [node name="PPC" type="RichTextLabel" parent="TextureButton/Node"]
 margin_left = 274.0
 margin_top = 4.0
-margin_right = 446.0
-margin_bottom = 44.0
+margin_right = 498.0
+margin_bottom = 78.0
 custom_fonts/normal_font = ExtResource( 5 )
+
+[node name="PPS" type="RichTextLabel" parent="TextureButton/Node"]
+margin_left = 283.0
+margin_top = 27.0
+margin_right = 608.0
+margin_bottom = 96.0
+custom_fonts/normal_font = ExtResource( 5 )
+text = "0"
+
+[node name="Reborn" type="RichTextLabel" parent="TextureButton/Node"]
+margin_left = 823.0
+margin_top = 543.0
+margin_right = 991.0
+margin_bottom = 583.0
+rect_pivot_offset = Vector2( -46, 46 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "Pay 100 points for 1 PPC"
+
+[node name="Reborn2" type="RichTextLabel" parent="TextureButton/Node"]
+margin_left = 204.0
+margin_top = 533.0
+margin_right = 529.0
+margin_bottom = 602.0
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 5 )
+text = "0"
 
 [node name="points" type="RichTextLabel" parent="."]
 margin_left = 368.0
@@ -92,14 +150,43 @@ custom_fonts/normal_font = ExtResource( 5 )
 text = "Your dad is never coming back..."
 
 [node name="Shop_1" type="TextureButton" parent="."]
-margin_left = 400.0
-margin_top = 338.0
-margin_right = 504.0
-margin_bottom = 377.0
+margin_left = 811.0
+margin_top = 32.0
+margin_right = 986.0
+margin_bottom = 85.0
+rect_pivot_offset = Vector2( -43, 53 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+expand = true
+
+[node name="Shop_2" type="TextureButton" parent="."]
+margin_left = 813.0
+margin_top = 97.0
+margin_right = 988.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( -43, 53 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+expand = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Reborn" type="TextureButton" parent="."]
+margin_left = 821.0
+margin_top = 537.0
+margin_right = 996.0
+margin_bottom = 590.0
+rect_pivot_offset = Vector2( -43, 53 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 2 )
 expand = true
 
 [connection signal="pressed" from="TextureButton" to="TextureButton/Node" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="Shop_1" to="TextureButton/Node" method="_on_Shop_1_pressed"]
+[connection signal="button_down" from="Shop_1" to="TextureButton/Node" method="_on_Shop_1_button_down"]
+[connection signal="button_down" from="Shop_2" to="TextureButton/Node" method="_on_Shop_2_button_down"]
+[connection signal="timeout" from="Timer" to="TextureButton/Node" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Reborn" to="TextureButton/Node" method="_on_Reborn_pressed"]
