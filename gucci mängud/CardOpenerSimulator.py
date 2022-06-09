@@ -10,7 +10,7 @@ uncommon = 3 # 33,3%
 common = 1
 debug = 0
 global money
-money = 110.01
+money = 0.01
 
 def main():
     global money
@@ -126,7 +126,7 @@ def open(arv, text):
     └───────┘""")
                     else:
                         if randint(1,epic) == epic:
-                            moneygot += 0.5
+                            moneygot += 1
                             if text == 1:
                                 print("You got a epic card")
                             ep += 1    
@@ -187,7 +187,7 @@ def open(arv, text):
         print(div ," - Divine cards          | 10000$ per 1")
         print(myth ," - Mythical cards       | 70$ per 1")
         print(legen ," - Legendary cards     | 5$ per 1")
-        print(ep ," - Epic cards             | 0.50$ per 1")
+        print(ep ," - Epic cards             | 1$ per 1")
         print(rar, " - Rare cards            | 0.20$ per 1")
         print(un ," - Uncommon cards         | 0.10$ per 1")
         print(comm ," - Common cards         | 0.01$ per 1")
@@ -202,7 +202,7 @@ def open(arv, text):
         main()
     else:
         print("You dont have enough funds")
-        print("You need", money-arv*1,"$ more to buy", arv,"packs!")
+        print("You need", round(money-arv,2),"$ more to buy", arv,"packs!")
         sleep(2)
         main()
         
