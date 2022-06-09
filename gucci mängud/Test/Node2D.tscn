@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://images/button/Button_1.png" type="Texture" id=1]
+[ext_resource path="res://images/button/Button_3.png" type="Texture" id=2]
+[ext_resource path="res://images/button/Button_2.png" type="Texture" id=3]
+[ext_resource path="res://button.gd" type="Script" id=4]
+[ext_resource path="res://text2.tres" type="DynamicFont" id=5]
+[ext_resource path="res://images/Background.png" type="Texture" id=6]
+[ext_resource path="res://text.tres" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 5
+font_data = ExtResource( 7 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 285.0
+margin_top = 229.0
+margin_right = 753.0
+margin_bottom = 337.0
+rect_scale = Vector2( 0.819707, 0.819702 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+
+[node name="Points per click" type="RichTextLabel" parent="TextureButton"]
+margin_left = -340.365
+margin_top = -272.05
+margin_right = 4.63464
+margin_bottom = -185.05
+custom_fonts/normal_font = ExtResource( 5 )
+text = "Points per click: "
+
+[node name="Button text" type="RichTextLabel" parent="TextureButton"]
+margin_left = 45.1381
+margin_top = 35.3787
+margin_right = 474.138
+margin_bottom = 94.3787
+mouse_filter = 2
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 5 )
+text = "Press me for points"
+
+[node name="Node" type="Node" parent="TextureButton"]
+script = ExtResource( 4 )
+
+[node name="Shop_1" type="RichTextLabel" parent="TextureButton/Node"]
+margin_left = 403.0
+margin_top = 345.0
+margin_right = 507.0
+margin_bottom = 385.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "Pay 100 points for 1 PPC"
+
+[node name="Point Score" type="RichTextLabel" parent="TextureButton/Node"]
+margin_left = 498.0
+margin_top = 186.0
+margin_right = 852.0
+margin_bottom = 213.0
+custom_fonts/normal_font = ExtResource( 5 )
+
+[node name="PPC" type="RichTextLabel" parent="TextureButton/Node"]
+margin_left = 274.0
+margin_top = 4.0
+margin_right = 446.0
+margin_bottom = 44.0
+custom_fonts/normal_font = ExtResource( 5 )
+
+[node name="points" type="RichTextLabel" parent="."]
+margin_left = 368.0
+margin_top = 187.0
+margin_right = 510.0
+margin_bottom = 214.0
+custom_fonts/normal_font = ExtResource( 5 )
+text = "POINTS:"
+
+[node name="funni" type="RichTextLabel" parent="."]
+margin_top = 555.0
+margin_right = 345.0
+margin_bottom = 624.0
+custom_fonts/normal_font = ExtResource( 5 )
+text = "Your dad is never coming back..."
+
+[node name="Shop_1" type="TextureButton" parent="."]
+margin_left = 400.0
+margin_top = 338.0
+margin_right = 504.0
+margin_bottom = 377.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+expand = true
+
+[connection signal="pressed" from="TextureButton" to="TextureButton/Node" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Shop_1" to="TextureButton/Node" method="_on_Shop_1_pressed"]
