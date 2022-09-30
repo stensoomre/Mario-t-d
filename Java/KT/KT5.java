@@ -6,7 +6,7 @@ class KT5 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Vajuta Nr 1  ");
+        System.out.print("Valige 1, et leida rööpselt ühendatud takiste kogutakistus - ");
         String valik = scanner.next();
         String arv1;
         String arv2;
@@ -19,22 +19,33 @@ class KT5 {
 
         switch (Integer.parseInt(valik)) {
             case 1:
-                System.out.print("Sisesta arv: ");
+                System.out.print("Takistuse oom: ");
                 arv1 = scanner.next();
-                System.out.print("Sisesta arv: ");
+                System.out.print("Takistuse oom: ");
                 arv2 = scanner.next();
-                System.out.print("Sisesta arv: ");
+                System.out.print("Takistuse oom: ");
                 arv3 = scanner.next();
-                System.out.print("Sisesta arv: ");
+                System.out.print("Takistuse oom: ");
                 arv4 = scanner.next();
-                System.out.print("Sisesta arv: ");
+                System.out.print("Takistuse oom: ");
                 arv5 = scanner.next();
-                System.out.print("Sisesta arv: ");
+                System.out.print("Takistuse oom: ");
                 arv6 = scanner.next();
-                s = KT5kooru.jes(arv1, arv2, arv3, arv4, arv5, arv6);
-                System.out.print("Kogutakistus on " + s);
+                s = jes(arv1, arv2, arv3, arv4, arv5, arv6);
+                System.out.print("Kogutakistus on " + s + " oomi");
                 break;
         }
 
+    }
+
+    public static double jes(String a, String b, String c, String d, String e, String f) {
+        float arv1 = Float.parseFloat(a);
+        float arv2 = Float.parseFloat(b);
+        float arv3 = Float.parseFloat(c);
+        float arv4 = Float.parseFloat(d);
+        float arv5 = Float.parseFloat(e);
+        float arv6 = Float.parseFloat(f);
+        double s = (arv1 + arv2 + arv3 + arv4) + (arv5 * arv6 / (arv5 + arv6));
+        return s;
     }
 }
