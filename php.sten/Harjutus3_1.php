@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    //Sten Soomre Harjutus 3 Sten Soomre 24.01.2023
+    //Sten Soomre Harjutus 3_1 Sten Soomre 24.01.2023
     ?>
 </body>
 <h1>Anna vasteid</h1>

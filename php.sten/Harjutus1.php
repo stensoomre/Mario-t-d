@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    //Sten Soomre Harjutus 2 Sten Soomre 24.01.2023
+    //Sten Soomre Harjutus 1 Sten Soomre 24.01.2023
     $aasta = 2005;
     $nimi = "Sten";
     $vanus = "17";
