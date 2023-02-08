@@ -89,7 +89,7 @@
         <button type="submit" class="btn btn-primary">Check</button>
       </form>
       <?php
-        //Sten Soomre Harjutus 6 Sten Soomre 01.03.2023
+        //Sten Soomre Harjutus 7 Sten Soomre 01.03.2023
       if (isset($_POST["id_number"])) {
         $id_number = $_POST["id_number"];
         $id_length = strlen($id_number);

@@ -2,7 +2,7 @@
 
 <div class="container">
 <?php
-$pages = array("Harjutus10_1", "Harjutus10_2", "Harjutus10_3", "Harjutus10_4");
+$pages = array("Harjutus10_1", "Harjutus9", "Harjutus3", "Harjutus5");
 $page = isset($_GET['page']) ? $_GET['page'] : "Harjutus10_1";
 
 if (!in_array($page, $pages)) {
@@ -41,9 +41,9 @@ if (!$_SESSION['logged_in']) {
 
 <div>
 <a href="Harjutus10.php?page=Harjutus10_1">Leht 1</a> |
-<a href="Harjutus10.php?page=Harjutus10_2">Leht 2</a> |
-<a href="Harjutus10.php?page=Harjutus10_3">Leht 3</a> |
-<a href="Harjutus10.php?page=Harjutus10_4">Leht 4</a>
+<a href="Harjutus10.php?page=Harjutus9">Leht 2</a> |
+<a href="Harjutus10.php?page=Harjutus3">Leht 3</a> |
+<a href="Harjutus10.php?page=Harjutus5">Leht 4</a>
 <br><br>
 </div>
 
@@ -52,14 +52,14 @@ switch ($page) {
     case "Harjutus10_1":
         include "Harjutus10_1.php";
         break;
-    case "Harjutus10_2":
-        include "Harjutus10_2.php";
+    case "Harjutus9":
+        include "Harjutus9.php";
         break;
-    case "Harjutus10_3":
-        include "Harjutus10_3.php";
+    case "Harjutus3":
+        include "Harjutus3.php";
         break;
-    case "Harjutus10_4":
-        include "Harjutus10_4.php";
+    case "Harjutus5":
+        include "Harjutus5.php";
         break;
 }
 ?>
