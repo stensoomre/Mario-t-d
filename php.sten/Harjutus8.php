@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-6 mb-3">
                 <?php
-                //Sten Soomre Harjutus 6 Sten Soomre 01.03.2023
+                //Sten Soomre Harjutus 8 Sten Soomre 01.03.2023
                 $endOfYear = new DateTime('2023-06-30');
                 $today = new DateTime();
                 $interval = $today->diff($endOfYear);
