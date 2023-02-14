@@ -22,13 +22,14 @@ if (isset($_POST['submit'])) {
         $format = $imageData['mime'];
         
         // Kuvame pildi andmed
+        echo "Orignaal suurused:<br>";
         echo 'Laius: '.$width.'px<br>';
         echo 'Kõrgus: '.$height.'px<br>';
         echo 'Formaat: '.$format.'<br>';
         
         // Tee pisipilt
-        $thumbnailWidth = 100;
-        $thumbnailHeight = 100;
+        $thumbnailWidth = $_POST['thumbnail_width'];
+        $thumbnailHeight = $_POST['thumbnail_height'];
         $thumbnail = imagecreatetruecolor($thumbnailWidth, $thumbnailHeight);
         $originalImage = imagecreatefromjpeg($image);
         imagecopyresampled($thumbnail, $originalImage, 0, 0, 0, 0, $thumbnailWidth, $thumbnailHeight, $width, $height);
@@ -42,6 +43,8 @@ if (isset($_POST['submit'])) {
 
 <form action="" method="post" enctype="multipart/form-data">
     Vali pilt: <input type="file" name="image" /><br><br>
+    Vali pisipildi laius: <input type="text" name="thumbnail_width" /><br><br>
+    Vali pisipildi kõrgus: <input type="text" name="thumbnail_height" /><br><br>
     <input type="submit" name="submit" value="Laadi üles" />
 </form>
 
