@@ -13,7 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
-  <title>Kontroll Töö (aga tegelikkult Mariole lihtsalt meeldib inimesi kiusata :c)</title>
+  <title>Kontroll Töö (aga tegelikkult Mariole lihtsalt meeldib inimesi kiusata)</title>
 </head>
 
 <body>
@@ -70,7 +70,8 @@
   <div class="container mt-4">
     <div class="display-1 fs-6 text-center">
       Call to action text This is some text and button within a call-to-action text block.
-      <button class="ms-4 mr-1 btn btn-danger" style="border-radius: 4px; font-size: 14px; padding: 4px;">Call to Action</button>
+      <button class="ms-4 mr-1 btn btn-danger" style="border-radius: 4px; font-size: 14px; padding: 4px;">Call to
+        Action</button>
     </div>
   </div>
   <p class="text-center" style="margin-top: 40px;margin-bottom: -5px; font-weight: 700; font-size: 50px">Get<span
@@ -92,16 +93,69 @@
     </div>
     <div class="row mt-4 mb-4">
       <div class="col">
-        <img src="img/Grid3.jpg" class="img-fluid" style="height: 200px;" alt="äge pilt">
+        <img src="img/Grid3.jpg" class="img-fluid" style="height: 300px;" alt="äge pilt">
       </div>
       <div class="col">
-        <img src="img/Grid4.jpg" class="img-fluid" style="height: 200px;" alt="äge pilt">
+        <img src="img/Grid4.jpg" class="img-fluid" style="height: 300px;" alt="äge pilt">
       </div>
       <div class="col">
-        <img src="img/Grid5.jpg" class="img-fluid" style="height: 200px;" alt="äge pilt">
+        <img src="img/Grid5.jpg" class="img-fluid" style="height: 300px;" alt="äge pilt">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="img/Grid6.jpg" class="img-fluid" style="height: 400px" alt="äge pilt">
+        <p class="fw-bold fs-1" style="margin-bottom: -10px;">Awesome Things</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quaerat excepturi cupiditate fugit qui cumque!
+          Saepe omnis, nemo minima, repudiandae impedit sed expedita vel fugiat dolorem laudantium amet vitae nesciunt.
+        </p>
+      </div>
+      <div class="col">
+        <img src="img/Grid7.jpg" class="img-fluid" style="height: 400px" alt="äge pilt">
+        <p class="fw-bold fs-1 " style="margin-bottom: -10px;">More Awesomeness</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quaerat excepturi cupiditate fugit qui cumque!
+          Saepe omnis, nemo minima, <a href="#">repudiandae</a> impedit sed expedita vel fugiat dolorem laudantium amet
+          vitae nesciunt.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col" >
+        <p class="fw-semibold fs-1" style="margin-bottom: -10px;">What we can do for you</p>
+        <div class="display-1 fs-4 mb-2">Here are some of our top features.</div>
+        <ul>
+          <li>
+            Add your own blocks
+          </li>
+          <li>
+            React Native app source included for Android and iOS
+          </li>
+          <li>
+            One year of free updates
+          </li>
+          <li>
+            Premium support
+          </li>
+          <li>
+            User friendly and intuitive
+          </li>
+          <li>
+            Media browser soon
+          </li>
+          <li>
+            Bootstrap 4 support
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <img src="img/Grid8.jpg" class="img-fluid" style="height: 300px" alt="lahe pilt">
       </div>
     </div>
   </div>
 </body>
+
 
 </html>
