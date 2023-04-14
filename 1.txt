@@ -1,0 +1,223 @@
+c:\sql>sqlite3 epood_ssoomre
+SQLite version 3.41.2 2023-03-22 11:56:21
+Enter ".help" for usage hints.
+sqlite> ATTACH DATABASE 'epood_ssoomre' as 'epood';
+sqlite> CREATE TABLE epood.toode(
+(x1...> id INTEGER PRIMARY KEY AUTOINCREMENT,
+(x1...> first_name VARCHAR(255) NOT NULL,
+(x1...> last_name VARCHAR(255) NOT NULL,
+(x1...> email VARCHAR(255) NOT NULL,
+(x1...> car_make VARCHAR(255) NOT NULL,
+(x1...> car_model VARCHAR(255) NOT NULL,
+(x1...> car_year INT,
+(x1...> car_price DECIMAL(10,2));
+sqlite> INSERT INTO epood.toode (first_name, last_name, email, car_make, car_model, car_year, car_price)
+...> VALUES ('Sten', 'Soomre', 'ssoomre@liivakast.edu.ee', 'Toyota', 'Corolla', 2020, 23900.50),
+...> ('Jaakup', 'Metssalu', 'midagiägedat@example.com', 'Toyota', 'Corolla', 2000, 12441.51),
+...> ('Peeter', 'Jõgisaar', 'midagiägedat@example.com', 'Toyota', 'Corolla', 2010, 12512.26);
+sqlite> SELECT * FROM epood.toode;
+1|Sten|Soomre|ssoomre@liivakast.edu.ee|Toyota|Corolla|2020|23900.5
+4|Jaakup|Metssalu|midagiägedat@example.com|Toyota|Corolla|2000|12441.51
+5|Peeter|Jõgisaar|midagiägedat@example.com|Toyota|Corolla|2010|12512.26
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (1, 'Louisa', 'Bloore', 'lbloore0@cloudflare.com', 'Pontiac', 'Parisienne', 1970, 16257.87);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (2, 'Yoshi', 'Stringer', 'ystringer1@sakura.ne.jp', 'BMW', '7 Series', 1974, 49095.36);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (3, 'Fayette', 'McCready', 'fmccready2@hexun.com', 'Mercury', 'Cougar', 1994, 39727.94);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (4, 'Udale', 'Maylott', 'umaylott3@geocities.com', 'Honda', 'Civic', 2009, 11207.2);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (5, 'Trina', 'Cabrer', 'tcabrer4@reuters.com', 'Mazda', 'Protege', 1983, 54108.54);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (6, 'Chase', 'Welman', 'cwelman5@wikia.com', 'Dodge', 'Ram 3500', 2016, 54912.32);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (7, 'George', 'Welling', 'gwelling6@a8.net', 'Chevrolet', 'Avalanche 1500', 1979, 86982.03);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (8, 'Oralie', 'Croston', 'ocroston7@360.cn', 'Lexus', 'RX Hybrid', 1969, 10077.73);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (9, 'Morgen', 'Petrowsky', 'mpetrowsky8@blogs.com', 'Jaguar', 'XK', 1980, 82111.66);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (10, 'Garry', 'Satterthwaite', 'gsatterthwaite9@baidu.com', 'Saab', '9-7X', 1972, 63762.22);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (11, 'Happy', 'Broster', 'hbrostera@usnews.com', 'Chevrolet', 'Express', 1987, 82161.85);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (12, 'Friederike', 'Dowty', 'fdowtyb@gnu.org', 'Ford', 'Freestar', 1973, 50202.08);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (13, 'Thibaut', 'Bill', 'tbillc@privacy.gov.au', 'Toyota', 'Camry', 2011, 18875.29);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (14, 'Natividad', 'Tute', 'ntuted@123-reg.co.uk', 'Shelby', 'GT350', 2003, 24948.78);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (15, 'Cash', 'Huton', 'chutone@time.com', 'Acura', 'TSX', 1968, 79165.12);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (16, 'Nannette', 'Hixson', 'nhixsonf@accuweather.com', 'GMC', 'Yukon', 2002, 44201.89);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (17, 'Charmion', 'Yelyashev', 'cyelyashevg@vk.com', 'Volkswagen', 'Tiguan', 2015, 68151.82);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (18, 'Conchita', 'Challen', 'cchallenh@vkontakte.ru', 'Chevrolet', 'Uplander', 1973, 38976.1);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (19, 'Talia', 'Casassa', 'tcasassai@moonfruit.com', 'Ford', 'F150', 1994, 70208.23);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (20, 'Susannah', 'Woodrooffe', 'swoodrooffej@qq.com', 'Mitsubishi', 'Truck', 2000, 19628.07);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (21, 'Gilligan', 'Shervington', 'gshervingtonk@nhs.uk', 'Chevrolet', 'Metro', 2018, 36550.08);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (22, 'Samuel', 'Conring', 'sconringl@cbc.ca', 'Isuzu', 'Space', 2015, 38033.1);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (23, 'Shauna', 'Iacomelli', 'siacomellim@tamu.edu', 'Mercedes-Benz', '300SE', 1973, 62496.4);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (24, 'Maxine', 'World', 'mworldn@tamu.edu', 'Nissan', 'Titan', 2000, 25763.2);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (25, 'Lodovico', 'Shorbrook', 'lshorbrooko@wired.com', 'Chevrolet', 'Malibu', 1975, 86398.5);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (26, 'Therese', 'Farfull', 'tfarfullp@homestead.com', 'BMW', 'Z4 M Roadster', 1989, 15465.24);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (27, 'Claudina', 'Tomkies', 'ctomkiesq@hhs.gov', 'Kia', 'Rio', 2016, 33481.52);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (28, 'Esme', 'Wordington', 'ewordingtonr@ted.com', 'Buick', 'Park Avenue', 2009, 79081.55);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (29, 'Ax', 'Lambertson', 'alambertsons@reference.com', 'Smart', 'Fortwo', 1990, 26799.41);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (30, 'Josselyn', 'Lovitt', 'jlovittt@mlb.com', 'Pontiac', 'Sunbird', 2005, 84148.33);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (31, 'Niles', 'Connerly', 'nconnerlyu@cnet.com', 'Dodge', 'Ram 1500', 2019, 31255.88);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (32, 'Koressa', 'Spandley', 'kspandleyv@usatoday.com', 'Dodge', 'Ram Van 1500', 1991, 82829.66);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (33, 'Jan', 'Pilpovic', 'jpilpovicw@bravesites.com', 'Lincoln', 'MKX', 1977, 26652.45);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (34, 'Otha', 'Hedgeley', 'ohedgeleyx@blogs.com', 'Nissan', 'Frontier', 1982, 81216.85);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (35, 'Merill', 'O''Brallaghan', 'mobrallaghany@linkedin.com', 'Chevrolet', 'Silverado 1500', 2009, 58649.68);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (36, 'Pattin', 'Bickersteth', 'pbickerstethz@businessinsider.com', 'BMW', 'M Roadster', 1988, 38172.56);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (37, 'Calypso', 'Shucksmith', 'cshucksmith10@macromedia.com', 'Infiniti', 'Q', 2022, 89861.44);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (38, 'Cyril', 'MacElharge', 'cmacelharge11@microsoft.com', 'Volkswagen', 'Cabriolet', 2017, 53380.14);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (39, 'Lionel', 'Juhruke', 'ljuhruke12@wunderground.com', 'Infiniti', 'EX', 1961, 54684.7);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (40, 'Dell', 'Viste', 'dviste13@fc2.com', 'Dodge', 'Avenger', 1970, 57225.4);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (41, 'Marje', 'Brasener', 'mbrasener14@chicagotribune.com', 'Toyota', 'MR2', 2011, 47327.93);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (42, 'Ernest', 'Goggan', 'egoggan15@cocolog-nifty.com', 'Buick', 'Estate', 1970, 10979.53);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (43, 'Jeremias', 'Bolwell', 'jbolwell16@gov.uk', 'Mitsubishi', 'Lancer', 1981, 79872.01);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (44, 'Reece', 'Shard', 'rshard17@soundcloud.com', 'Mitsubishi', 'Outlander', 2018, 79979.47);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (45, 'Abbye', 'Shillington', 'ashillington18@usda.gov', 'GMC', 'Vandura G1500', 2003, 66324.68);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (46, 'Winfred', 'Crispe', 'wcrispe19@ow.ly', 'Maserati', 'Biturbo', 2008, 40582.66);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (47, 'Melisa', 'Tumilty', 'mtumilty1a@mozilla.org', 'Toyota', 'Celica', 1980, 74766.38);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (48, 'Alis', 'Reveland', 'areveland1b@nih.gov', 'Volvo', 'V70', 1966, 33518.59);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (49, 'Felicio', 'Tatam', 'ftatam1c@networksolutions.com', 'BMW', 'M', 2006, 27767.73);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (50, 'Melly', 'Sharple', 'msharple1d@bbc.co.uk', 'Buick', 'Century', 1970, 62432.34);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (51, 'Orville', 'Darby', 'odarby1e@bbc.co.uk', 'Porsche', 'Cayenne', 1968, 65294.22);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (52, 'Deedee', 'Sweedland', 'dsweedland1f@omniture.com', 'Chevrolet', 'Suburban 2500', 1961, 84463.66);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (53, 'Kaycee', 'Gloves', 'kgloves1g@ustream.tv', 'Volvo', 'C70', 2016, 66858.4);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (54, 'Louie', 'O''Deegan', 'lodeegan1h@uiuc.edu', 'Chrysler', 'Sebring', 2015, 64302.96);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (55, 'Kim', 'Vasilechko', 'kvasilechko1i@bigcartel.com', 'Mitsubishi', 'Galant', 1966, 39516.19);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (56, 'Cordi', 'Straw', 'cstraw1j@bloglines.com', 'Ford', 'E150', 1989, 40026.47);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (57, 'Ross', 'Noriega', 'rnoriega1k@fastcompany.com', 'Lincoln', 'Navigator', 1960, 81055.94);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (58, 'Chere', 'Volett', 'cvolett1l@linkedin.com', 'Oldsmobile', 'Cutlass', 2005, 46229.26);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (59, 'Aylmer', 'Shew', 'ashew1m@virginia.edu', 'Mercury', 'Monterey', 2013, 31349.87);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (60, 'Emlynne', 'Sessions', 'esessions1n@wordpress.org', 'Saab', '900', 1986, 24412.79);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (61, 'Layne', 'Matuszak', 'lmatuszak1o@deliciousdays.com', 'Chrysler', 'Town & Country', 1995, 83543.99);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (62, 'Aubine', 'Grasser', 'agrasser1p@odnoklassniki.ru', 'Isuzu', 'Trooper', 2010, 48715.36);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (63, 'Brandyn', 'Bubbear', 'bbubbear1q@ebay.co.uk', 'Bentley', 'Continental GTC', 1974, 77523.26);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (64, 'Elisabeth', 'Batty', 'ebatty1r@prnewswire.com', 'Ford', 'E350', 1979, 54549.44);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (65, 'Fidela', 'Walkington', 'fwalkington1s@redcross.org', 'Pontiac', 'Grand Am', 1969, 75476.47);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (66, 'Ethan', 'Lambarth', 'elambarth1t@mtv.com', 'Kia', 'Sedona', 1976, 26347.21);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (67, 'Jordan', 'Hopkins', 'jhopkins1u@reverbnation.com', 'Lexus', 'ES', 2014, 79705.04);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (68, 'Lodovico', 'Verny', 'lverny1v@bloglines.com', 'Honda', 'Accord', 1967, 11365.55);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (69, 'Jordan', 'Tonn', 'jtonn1w@facebook.com', 'Ford', 'E350', 2014, 58182.39);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (70, 'Keen', 'Cadalleder', 'kcadalleder1x@blinklist.com', 'Mitsubishi', 'Excel', 1973, 65047.0);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (71, 'Haleigh', 'Guiton', 'hguiton1y@bing.com', 'Oldsmobile', '98', 2012, 57723.0);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (72, 'Quinn', 'Fenna', 'qfenna1z@dagondesign.com', 'Ford', 'GT500', 1963, 38920.49);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (73, 'Mil', 'Baldassi', 'mbaldassi20@weather.com', 'GMC', 'Sierra 1500', 1970, 51544.14);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (74, 'Brinna', 'Warlowe', 'bwarlowe21@about.com', 'Chevrolet', 'Aveo', 1973, 80614.73);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (75, 'Stevana', 'Brittan', 'sbrittan22@livejournal.com', 'Oldsmobile', '88', 2007, 28999.43);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (76, 'Dulcie', 'Utton', 'dutton23@netscape.com', 'Ford', 'Mustang', 1976, 29218.88);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (77, 'Aurelie', 'Atwater', 'aatwater24@blogs.com', 'Dodge', 'Ram Van 1500', 1983, 57913.24);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (78, 'Jean', 'Hallstone', 'jhallstone25@zimbio.com', 'Lexus', 'RX Hybrid', 1973, 70153.0);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (79, 'Boot', 'Kohen', 'bkohen26@i2i.jp', 'Dodge', 'Dakota Club', 1960, 82311.3);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (80, 'Parsifal', 'Klampk', 'pklampk27@cmu.edu', 'Ford', 'Bronco II', 2022, 53213.48);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (81, 'Vivyanne', 'Huddleston', 'vhuddleston28@sbwire.com', 'Kia', 'Sportage', 1971, 19229.8);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (82, 'Jesus', 'Keeton', 'jkeeton29@yolasite.com', 'Lexus', 'ES', 1981, 27908.91);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (83, 'Richard', 'Eich', 'reich2a@techcrunch.com', 'Chevrolet', 'Suburban 2500', 1996, 89600.16);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (84, 'Chad', 'D''Oyley', 'cdoyley2b@arstechnica.com', 'GMC', 'Yukon XL 1500', 1995, 73142.19);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (85, 'Forbes', 'Plante', 'fplante2c@bing.com', 'Porsche', '911', 2004, 11484.93);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (86, 'Kailey', 'Della Scala', 'kdellascala2d@miibeian.gov.cn', 'Lincoln', 'Town Car', 2020, 14669.07);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (87, 'Berry', 'Stennine', 'bstennine2e@nasa.gov', 'Honda', 'CR-V', 2003, 15828.73);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (88, 'Erma', 'Macon', 'emacon2f@bloglovin.com', 'Mazda', 'Mazdaspeed 3', 1995, 48668.44);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (89, 'Meredeth', 'Slimm', 'mslimm2g@edublogs.org', 'Subaru', 'Impreza WRX', 1980, 80356.02);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (90, 'Abramo', 'Tender', 'atender2h@rediff.com', 'Lincoln', 'Mark LT', 1989, 43140.1);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (91, 'Rufe', 'Marousek', 'rmarousek2i@nationalgeographic.com', 'Hyundai', 'Accent', 2020, 61773.99);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (92, 'Debbi', 'Kenealy', 'dkenealy2j@aboutads.info', 'Oldsmobile', 'LSS', 1961, 89355.23);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (93, 'Teri', 'Kalkofen', 'tkalkofen2k@aboutads.info', 'Scion', 'xB', 1965, 60368.76);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (94, 'Carce', 'Ladson', 'cladson2l@vimeo.com', 'Mazda', 'Familia', 1967, 17678.04);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (95, 'Jobyna', 'Brokenshire', 'jbrokenshire2m@mac.com', 'Mazda', '929', 2018, 53634.42);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (96, 'Preston', 'McIlraith', 'pmcilraith2n@nyu.edu', 'Dodge', 'Nitro', 1990, 71337.94);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (97, 'Miranda', 'de Wilde', 'mdewilde2o@miitbeian.gov.cn', 'Honda', 'S2000', 2015, 45159.27);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (98, 'Cordell', 'Debow', 'cdebow2p@utexas.edu', 'Pontiac', '6000', 1985, 50473.61);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (99, 'Gabriele', 'Lassen', 'glassen2q@desdev.cn', 'Hyundai', 'Accent', 2003, 44784.98);
+insert into epood.toode (id, first_name, last_name, email, car_make, car_model, car_year, car_price) values (100, 'Karil', 'McGarrity', 'kmcgarrity2r@tripadvisor.com', 'GMC', '3500 Club Coupe', 2014, 36730.33);
+sqlite> SELECT * FROM epood.toode
+   ...> ;
+1|Sten|Soomre|ssoomre@liivakast.edu.ee|Toyota|Corolla|2020|23900.5
+2|Yoshi|Stringer|ystringer1@sakura.ne.jp|BMW|7 Series|1974|49095.36
+3|Fayette|McCready|fmccready2@hexun.com|Mercury|Cougar|1994|39727.94
+4|Jaakup|Metssalu|midagiägedat@example.com|Toyota|Corolla|2000|12441.51
+5|Peeter|Jõgisaar|midagiägedat@example.com|Toyota|Corolla|2010|12512.26
+6|Chase|Welman|cwelman5@wikia.com|Dodge|Ram 3500|2016|54912.32
+7|George|Welling|gwelling6@a8.net|Chevrolet|Avalanche 1500|1979|86982.03
+8|Oralie|Croston|ocroston7@360.cn|Lexus|RX Hybrid|1969|10077.73
+9|Morgen|Petrowsky|mpetrowsky8@blogs.com|Jaguar|XK|1980|82111.66
+10|Garry|Satterthwaite|gsatterthwaite9@baidu.com|Saab|9-7X|1972|63762.22
+11|Happy|Broster|hbrostera@usnews.com|Chevrolet|Express|1987|82161.85
+12|Friederike|Dowty|fdowtyb@gnu.org|Ford|Freestar|1973|50202.08
+13|Thibaut|Bill|tbillc@privacy.gov.au|Toyota|Camry|2011|18875.29
+14|Natividad|Tute|ntuted@123-reg.co.uk|Shelby|GT350|2003|24948.78
+15|Cash|Huton|chutone@time.com|Acura|TSX|1968|79165.12
+16|Nannette|Hixson|nhixsonf@accuweather.com|GMC|Yukon|2002|44201.89
+17|Charmion|Yelyashev|cyelyashevg@vk.com|Volkswagen|Tiguan|2015|68151.82
+18|Conchita|Challen|cchallenh@vkontakte.ru|Chevrolet|Uplander|1973|38976.1
+19|Talia|Casassa|tcasassai@moonfruit.com|Ford|F150|1994|70208.23
+20|Susannah|Woodrooffe|swoodrooffej@qq.com|Mitsubishi|Truck|2000|19628.07
+21|Gilligan|Shervington|gshervingtonk@nhs.uk|Chevrolet|Metro|2018|36550.08
+22|Samuel|Conring|sconringl@cbc.ca|Isuzu|Space|2015|38033.1
+23|Shauna|Iacomelli|siacomellim@tamu.edu|Mercedes-Benz|300SE|1973|62496.4
+24|Maxine|World|mworldn@tamu.edu|Nissan|Titan|2000|25763.2
+25|Lodovico|Shorbrook|lshorbrooko@wired.com|Chevrolet|Malibu|1975|86398.5
+26|Therese|Farfull|tfarfullp@homestead.com|BMW|Z4 M Roadster|1989|15465.24
+27|Claudina|Tomkies|ctomkiesq@hhs.gov|Kia|Rio|2016|33481.52
+28|Esme|Wordington|ewordingtonr@ted.com|Buick|Park Avenue|2009|79081.55
+29|Ax|Lambertson|alambertsons@reference.com|Smart|Fortwo|1990|26799.41
+30|Josselyn|Lovitt|jlovittt@mlb.com|Pontiac|Sunbird|2005|84148.33
+31|Niles|Connerly|nconnerlyu@cnet.com|Dodge|Ram 1500|2019|31255.88
+32|Koressa|Spandley|kspandleyv@usatoday.com|Dodge|Ram Van 1500|1991|82829.66
+33|Jan|Pilpovic|jpilpovicw@bravesites.com|Lincoln|MKX|1977|26652.45
+34|Otha|Hedgeley|ohedgeleyx@blogs.com|Nissan|Frontier|1982|81216.85
+35|Merill|O'Brallaghan|mobrallaghany@linkedin.com|Chevrolet|Silverado 1500|2009|58649.68
+36|Pattin|Bickersteth|pbickerstethz@businessinsider.com|BMW|M Roadster|1988|38172.56
+37|Calypso|Shucksmith|cshucksmith10@macromedia.com|Infiniti|Q|2022|89861.44
+38|Cyril|MacElharge|cmacelharge11@microsoft.com|Volkswagen|Cabriolet|2017|53380.14
+39|Lionel|Juhruke|ljuhruke12@wunderground.com|Infiniti|EX|1961|54684.7
+40|Dell|Viste|dviste13@fc2.com|Dodge|Avenger|1970|57225.4
+41|Marje|Brasener|mbrasener14@chicagotribune.com|Toyota|MR2|2011|47327.93
+42|Ernest|Goggan|egoggan15@cocolog-nifty.com|Buick|Estate|1970|10979.53
+43|Jeremias|Bolwell|jbolwell16@gov.uk|Mitsubishi|Lancer|1981|79872.01
+44|Reece|Shard|rshard17@soundcloud.com|Mitsubishi|Outlander|2018|79979.47
+45|Abbye|Shillington|ashillington18@usda.gov|GMC|Vandura G1500|2003|66324.68
+46|Winfred|Crispe|wcrispe19@ow.ly|Maserati|Biturbo|2008|40582.66
+47|Melisa|Tumilty|mtumilty1a@mozilla.org|Toyota|Celica|1980|74766.38
+48|Alis|Reveland|areveland1b@nih.gov|Volvo|V70|1966|33518.59
+49|Felicio|Tatam|ftatam1c@networksolutions.com|BMW|M|2006|27767.73
+50|Melly|Sharple|msharple1d@bbc.co.uk|Buick|Century|1970|62432.34
+51|Orville|Darby|odarby1e@bbc.co.uk|Porsche|Cayenne|1968|65294.22
+52|Deedee|Sweedland|dsweedland1f@omniture.com|Chevrolet|Suburban 2500|1961|84463.66
+53|Kaycee|Gloves|kgloves1g@ustream.tv|Volvo|C70|2016|66858.4
+54|Louie|O'Deegan|lodeegan1h@uiuc.edu|Chrysler|Sebring|2015|64302.96
+55|Kim|Vasilechko|kvasilechko1i@bigcartel.com|Mitsubishi|Galant|1966|39516.19
+56|Cordi|Straw|cstraw1j@bloglines.com|Ford|E150|1989|40026.47
+57|Ross|Noriega|rnoriega1k@fastcompany.com|Lincoln|Navigator|1960|81055.94
+58|Chere|Volett|cvolett1l@linkedin.com|Oldsmobile|Cutlass|2005|46229.26
+59|Aylmer|Shew|ashew1m@virginia.edu|Mercury|Monterey|2013|31349.87
+60|Emlynne|Sessions|esessions1n@wordpress.org|Saab|900|1986|24412.79
+61|Layne|Matuszak|lmatuszak1o@deliciousdays.com|Chrysler|Town & Country|1995|83543.99
+62|Aubine|Grasser|agrasser1p@odnoklassniki.ru|Isuzu|Trooper|2010|48715.36
+63|Brandyn|Bubbear|bbubbear1q@ebay.co.uk|Bentley|Continental GTC|1974|77523.26
+64|Elisabeth|Batty|ebatty1r@prnewswire.com|Ford|E350|1979|54549.44
+65|Fidela|Walkington|fwalkington1s@redcross.org|Pontiac|Grand Am|1969|75476.47
+66|Ethan|Lambarth|elambarth1t@mtv.com|Kia|Sedona|1976|26347.21
+67|Jordan|Hopkins|jhopkins1u@reverbnation.com|Lexus|ES|2014|79705.04
+68|Lodovico|Verny|lverny1v@bloglines.com|Honda|Accord|1967|11365.55
+69|Jordan|Tonn|jtonn1w@facebook.com|Ford|E350|2014|58182.39
+70|Keen|Cadalleder|kcadalleder1x@blinklist.com|Mitsubishi|Excel|1973|65047
+71|Haleigh|Guiton|hguiton1y@bing.com|Oldsmobile|98|2012|57723
+72|Quinn|Fenna|qfenna1z@dagondesign.com|Ford|GT500|1963|38920.49
+73|Mil|Baldassi|mbaldassi20@weather.com|GMC|Sierra 1500|1970|51544.14
+74|Brinna|Warlowe|bwarlowe21@about.com|Chevrolet|Aveo|1973|80614.73
+75|Stevana|Brittan|sbrittan22@livejournal.com|Oldsmobile|88|2007|28999.43
+76|Dulcie|Utton|dutton23@netscape.com|Ford|Mustang|1976|29218.88
+77|Aurelie|Atwater|aatwater24@blogs.com|Dodge|Ram Van 1500|1983|57913.24
+78|Jean|Hallstone|jhallstone25@zimbio.com|Lexus|RX Hybrid|1973|70153
+79|Boot|Kohen|bkohen26@i2i.jp|Dodge|Dakota Club|1960|82311.3
+80|Parsifal|Klampk|pklampk27@cmu.edu|Ford|Bronco II|2022|53213.48
+81|Vivyanne|Huddleston|vhuddleston28@sbwire.com|Kia|Sportage|1971|19229.8
+82|Jesus|Keeton|jkeeton29@yolasite.com|Lexus|ES|1981|27908.91
+83|Richard|Eich|reich2a@techcrunch.com|Chevrolet|Suburban 2500|1996|89600.16
+84|Chad|D'Oyley|cdoyley2b@arstechnica.com|GMC|Yukon XL 1500|1995|73142.19
+85|Forbes|Plante|fplante2c@bing.com|Porsche|911|2004|11484.93
+86|Kailey|Della Scala|kdellascala2d@miibeian.gov.cn|Lincoln|Town Car|2020|14669.07
+87|Berry|Stennine|bstennine2e@nasa.gov|Honda|CR-V|2003|15828.73
+88|Erma|Macon|emacon2f@bloglovin.com|Mazda|Mazdaspeed 3|1995|48668.44
+89|Meredeth|Slimm|mslimm2g@edublogs.org|Subaru|Impreza WRX|1980|80356.02
+90|Abramo|Tender|atender2h@rediff.com|Lincoln|Mark LT|1989|43140.1
+91|Rufe|Marousek|rmarousek2i@nationalgeographic.com|Hyundai|Accent|2020|61773.99
+92|Debbi|Kenealy|dkenealy2j@aboutads.info|Oldsmobile|LSS|1961|89355.23
+93|Teri|Kalkofen|tkalkofen2k@aboutads.info|Scion|xB|1965|60368.76
+94|Carce|Ladson|cladson2l@vimeo.com|Mazda|Familia|1967|17678.04
+95|Jobyna|Brokenshire|jbrokenshire2m@mac.com|Mazda|929|2018|53634.42
+96|Preston|McIlraith|pmcilraith2n@nyu.edu|Dodge|Nitro|1990|71337.94
+97|Miranda|de Wilde|mdewilde2o@miitbeian.gov.cn|Honda|S2000|2015|45159.27
+98|Cordell|Debow|cdebow2p@utexas.edu|Pontiac|6000|1985|50473.61
+99|Gabriele|Lassen|glassen2q@desdev.cn|Hyundai|Accent|2003|44784.98
+100|Karil|McGarrity|kmcgarrity2r@tripadvisor.com|GMC|3500 Club Coupe|2014|36730.33
