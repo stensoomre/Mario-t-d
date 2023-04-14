@@ -1,0 +1,121 @@
+sqlite> UPDATE toode SET car_make = 'Zaporožets' WHERE id = 1;
+sqlite> UPDATE toode SET car_make = 'Citroën' WHERE car_make = 'Cadillac';
+sqlite> DELETE FROM toode WHERE id IN (5, 10, 15);
+sqlite> SELECT id, last_name AS car_make, car_year FROM toode ORDER BY id ASC;
+1|Soomre|2020
+2|Stringer|1974
+3|McCready|1994
+4|Metssalu|2000
+6|Welman|2016
+7|Welling|1979
+8|Croston|1969
+9|Petrowsky|1980
+11|Broster|1987
+12|Dowty|1973
+13|Bill|2011
+14|Tute|2003
+16|Hixson|2002
+17|Yelyashev|2015
+18|Challen|1973
+19|Casassa|1994
+20|Woodrooffe|2000
+21|Shervington|2018
+22|Conring|2015
+23|Iacomelli|1973
+24|World|2000
+25|Shorbrook|1975
+26|Farfull|1989
+27|Tomkies|2016
+28|Wordington|2009
+29|Lambertson|1990
+30|Lovitt|2005
+31|Connerly|2019
+32|Spandley|1991
+33|Pilpovic|1977
+34|Hedgeley|1982
+35|O'Brallaghan|2009
+36|Bickersteth|1988
+37|Shucksmith|2022
+38|MacElharge|2017
+39|Juhruke|1961
+40|Viste|1970
+41|Brasener|2011
+42|Goggan|1970
+43|Bolwell|1981
+44|Shard|2018
+45|Shillington|2003
+46|Crispe|2008
+47|Tumilty|1980
+48|Reveland|1966
+49|Tatam|2006
+50|Sharple|1970
+51|Darby|1968
+52|Sweedland|1961
+53|Gloves|2016
+54|O'Deegan|2015
+55|Vasilechko|1966
+56|Straw|1989
+57|Noriega|1960
+58|Volett|2005
+59|Shew|2013
+60|Sessions|1986
+61|Matuszak|1995
+62|Grasser|2010
+63|Bubbear|1974
+64|Batty|1979
+65|Walkington|1969
+66|Lambarth|1976
+67|Hopkins|2014
+68|Verny|1967
+69|Tonn|2014
+70|Cadalleder|1973
+71|Guiton|2012
+72|Fenna|1963
+73|Baldassi|1970
+74|Warlowe|1973
+75|Brittan|2007
+76|Utton|1976
+77|Atwater|1983
+78|Hallstone|1973
+79|Kohen|1960
+80|Klampk|2022
+81|Huddleston|1971
+82|Keeton|1981
+83|Eich|1996
+84|D'Oyley|1995
+85|Plante|2004
+86|Della Scala|2020
+87|Stennine|2003
+88|Macon|1995
+89|Slimm|1980
+90|Tender|1989
+91|Marousek|2020
+92|Kenealy|1961
+93|Kalkofen|1965
+94|Ladson|1967
+95|Brokenshire|2018
+96|McIlraith|1990
+97|de Wilde|2015
+98|Debow|1985
+99|Lassen|2003
+100|McGarrity|2014
+sqlite> SELECT id, first_name, last_name, car_make, car_year FROM toode WHERE last_name LIKE 's%' ORDER BY car_year DESC LIMIT 10;
+37|Calypso|Shucksmith|Infiniti|2022
+1|Sten|Soomre|Zaporožets|2020
+21|Gilligan|Shervington|Chevrolet|2018
+44|Reece|Shard|Mitsubishi|2018
+59|Aylmer|Shew|Mercury|2013
+45|Abbye|Shillington|GMC|2003
+87|Berry|Stennine|Honda|2003
+32|Koressa|Spandley|Dodge|1991
+56|Cordi|Straw|Ford|1989
+60|Emlynne|Sessions|Saab|1986
+sqlite> SELECT * FROM toode WHERE car_make IN ('Saab', 'Dodge') AND car_price > 20000;
+6|Chase|Welman|cwelman5@wikia.com|Dodge|Ram 3500|2016|54912.32
+31|Niles|Connerly|nconnerlyu@cnet.com|Dodge|Ram 1500|2019|31255.88
+32|Koressa|Spandley|kspandleyv@usatoday.com|Dodge|Ram Van 1500|1991|82829.66
+40|Dell|Viste|dviste13@fc2.com|Dodge|Avenger|1970|57225.4
+60|Emlynne|Sessions|esessions1n@wordpress.org|Saab|900|1986|24412.79
+77|Aurelie|Atwater|aatwater24@blogs.com|Dodge|Ram Van 1500|1983|57913.24
+79|Boot|Kohen|bkohen26@i2i.jp|Dodge|Dakota Club|1960|82311.3
+96|Preston|McIlraith|pmcilraith2n@nyu.edu|Dodge|Nitro|1990|71337.94
