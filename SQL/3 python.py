@@ -2,7 +2,7 @@
 import sqlite3
 import csv
 
-conn = sqlite3.connect('epood_eteppan;')
+conn = sqlite3.connect('epood_ssoomre;')
 c = conn.cursor()
 
 
@@ -11,7 +11,7 @@ functions = []
 
 def query_1():
     # Kuva read, kus on vanemad autod, kui 2000 aasta, sorteeri aasta järgi tõusvas järjekorras
-    c.execute("SELECT * FROM eteppan WHERE car_year > 2000 ORDER BY car_year ASC")
+    c.execute("SELECT * FROM toode WHERE car_year > 2000 ORDER BY car_year ASC")
     rows = c.fetchall()
     for row in rows:
         print(row)
@@ -19,14 +19,14 @@ def query_1():
 
 def query_2():
 
-    c.execute("SELECT AVG(car_year), MAX(car_price) FROM eteppan")
+    c.execute("SELECT AVG(car_year), MAX(car_price) FROM toode")
     row = c.fetchone()
     print("Keskmine autode aasta: {}, kõige kallim hind: {}".format(row[0], row[1]))
 
 
 def query_3():
  
-    c.execute("SELECT car_make, car_model FROM eteppan ORDER BY car_year DESC LIMIT 5")
+    c.execute("SELECT car_make, car_model FROM toode ORDER BY car_year DESC LIMIT 5")
     rows = c.fetchall()
     for row in rows:
         print(row)
@@ -35,7 +35,7 @@ def query_3():
 def query_4():
   
     mark = input("Sisesta automark: ")
-    c.execute("SELECT * FROM eteppan WHERE car_make=? ORDER BY car_price DESC LIMIT 5", (mark,))
+    c.execute("SELECT * FROM toode WHERE car_make=? ORDER BY car_price DESC LIMIT 5", (mark,))
     rows = c.fetchall()
     for row in rows:
         print(row)
@@ -44,7 +44,7 @@ def query_4():
 def query_5():
    
     mark = input("Sisesta automark: ")
-    c.execute("DELETE FROM eteppan WHERE car_year < 2000 AND car_make=?", (mark,))
+    c.execute("DELETE FROM toode WHERE car_year < 2000 AND car_make=?", (mark,))
     conn.commit()
     print("{} kirjet kustutati".format(c.rowcount))
 
@@ -53,7 +53,7 @@ def query_6():
     
     with open('autod.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
-        c.execute("SELECT * FROM eteppan")
+        c.execute("SELECT * FROM toode")
         rows = c.fetchall()
         for row in rows:
             writer.writerow(row)
@@ -62,7 +62,7 @@ def query_6():
 
 def query_7():
     
-    c.execute("DELETE FROM eteppan")
+    c.execute("DELETE FROM toode")
     conn.commit()
     print("{} kirjet kustutati".format(c.rowcount))
 
