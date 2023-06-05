@@ -1,0 +1,137 @@
+#!/bin/bash
+
+# Update system packages
+sudo apt update
+sudo apt upgrade -y
+
+# Install MariaDB (optional)
+read -p "Do you want to install MariaDB? (y/n): " install_mariadb
+if [ "$install_mariadb" == "y" ]; then
+  sudo apt install mariadb-server -y
+  sudo mysql_secure_installation
+fi
+
+# Install Nginx
+sudo apt install nginx -y
+
+# Install PHP and necessary extensions
+sudo apt install php-fpm php-mysql php-curl php-gd php-mbstring php-xml php-zip -y
+
+# Configure PHP for Nginx
+sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/' /etc/php/7.4/fpm/php.ini
+
+# Restart PHP-FPM service
+sudo systemctl restart php7.4-fpm
+
+# Add Nginx configuration for default server
+sudo bash -c 'cat > /etc/nginx/sites-available/default << EOF
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+
+    # Add index.php to the list if you are using PHP
+    index index.php index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    # Redirect HTTP requests to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/html;
+
+    # Add index.php to the list if you are using PHP
+    index index.php index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    ssl_certificate /etc/ssl/server.crt;
+    ssl_certificate_key /etc/ssl/server.key;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /phpmyadmin {
+        root /usr/share/;
+        index index.php index.html index.htm;
+
+        location ~ ^/phpmyadmin/(.+\.php)$ {
+            try_files $uri =404;
+            root /usr/share/;
+            fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+            fastcgi_index index.php;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            include fastcgi_params;
+        }
+
+        location ~* ^/phpmyadmin/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
+            root /usr/share/;
+        }
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+    }
+}
+EOF'
+
+# Add fastcgi-php.conf
+sudo bash -c 'cat > /etc/nginx/snippets/fastcgi-php.conf << EOF
+# regex to split \$uri to \$fastcgi_script_name and \$fastcgi_path
+fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+
+# Check that the PHP script exists before passing it
+try_files \$fastcgi_script_name =404;
+
+# Bypass the fact that try_files resets \$fastcgi_path_info
+# see: http://trac.nginx.org/nginx/ticket/321
+set \$path_info \$fastcgi_path_info;
+fastcgi_param PATH_INFO \$path_info;
+
+fastcgi_index index.php;
+fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+include fastcgi_params;
+EOF'
+
+# Reload Nginx
+sudo systemctl reload nginx
+
+# Install phpMyAdmin
+sudo apt install phpmyadmin -y
+
+# Create symbolic link for phpMyAdmin in Nginx web root
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+
+# Set MySQL root password
+sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'parool'; FLUSH PRIVILEGES;"
+
+# Install SSL certificate (optional)
+read -p "Do you want to install SSL certificate? (y/n): " install_ssl
+if [ "$install_ssl" == "y" ]; then
+  sudo apt install certbot python3-certbot-nginx -y
+  sudo mkdir /etc/ssl
+  sudo openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout /etc/ssl/server.key -out /etc/ssl/server.crt
+  sudo systemctl reload nginx
+fi
+
+# Install SSH
+sudo apt install openssh-server -y
+
+# Allow root login with password
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sudo systemctl restart sshd
+
+# Set root password
+echo "root:parool" | sudo chpasswd
+
+# Create index.html file
+sudo bash -c 'echo "<h1>Welcome to my website!</h1>" > /var/www/html/index.html'
+
+echo "Installation completed successfully."
