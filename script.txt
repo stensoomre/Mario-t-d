@@ -97,6 +97,7 @@ fastcgi_param PATH_INFO \$path_info;
 
 fastcgi_index index.php;
 fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 include fastcgi_params;
 EOF'
 
@@ -110,7 +111,8 @@ sudo apt install phpmyadmin -y
 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 
 # Set MySQL root password
-sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'parool'; FLUSH PRIVILEGES;"
+
+sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'parool'; GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'; FLUSH PRIVILEGES;"
 
 # Install SSL certificate (optional)
 read -p "Do you want to install SSL certificate? (y/n): " install_ssl
