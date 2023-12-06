@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="et">
+
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ülesanne 13.2 - data-atribuudid</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+    <div class="container">
+        <h1 class="display-1">Pildid</h1>
+        <div class="card-group">
+            <div class="card" style="width: 18rem;">
+                <img src="https://placehold.co/300x200" class="card-img-top" alt="..." data-title="Mägijärv"
+                    data-description="Kaunis järv mägede vahel">
+                <div class="card-body">
+                    <h5 class="card-title">...</h5>
+                    <p class="card-text">...</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://placehold.co/300x200" class="card-img-top" alt="..." data-title="Metsajõgi"
+                    data-description="Kaunis jõgi metsade vahel">
+                <div class="card-body">
+                    <h5 class="card-title">...</h5>
+                    <p class="card-text">...</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://placehold.co/300x200" class="card-img-top" alt="..." data-title="Lohumägi"
+                    data-description="Kaunis mägi lohkude vahel">
+                <div class="card-body">
+                    <h5 class="card-title">...</h5>
+                    <p class="card-text">...</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+        <script> // mario, kuna sa tahtsid, et ma teeksin inline javascripti ss sa saad InLiNe JaVaScRiPtI
+            document.addEventListener('DOMContentLoaded', function () {
+                var cards = document.querySelectorAll('.card');
+        
+                cards.forEach(function (card, index) {
+                    var img = card.querySelector('.card-img-top');
+                    var titleElement = card.querySelector('.card-title');
+                    var descElement = card.querySelector('.card-text');
+        
+                    titleElement.textContent = img.getAttribute('data-title');
+                    descElement.textContent = img.getAttribute('data-description');
+                });
+            });
+        </script>
+
+</body>
+
+</html>
